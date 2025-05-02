@@ -1,4 +1,7 @@
-# 🔐 Simulasi Keamanan Web: Eksperimen XSS (Stored & Reflected)
+# Simulasi Keamanan Web: Eksperimen XSS (Stored & Reflected)
+---
+
+<br>
 
 ## 📚 Daftar Isi
 
@@ -23,6 +26,8 @@ Eksperimen ini dirancang untuk:
 
 ---
 
+<br>
+
 ## 🛠️ Kebutuhan Sistem
 
 | Komponen   | Fungsi                                                    |
@@ -33,6 +38,8 @@ Eksperimen ini dirancang untuk:
 | Editor     | Untuk menulis dan mengedit kode (VS Code, Notepad++, dll) |
 
 ---
+
+<br>
 
 ## 📁 Struktur Direktori Proyek
 
@@ -58,6 +65,8 @@ xss_lab/
 
 ---
 
+<br>
+
 ## ⚙️ Database Setup (via phpMyAdmin)
 
 1. Buka `http://localhost/phpmyadmin`.
@@ -81,6 +90,8 @@ INSERT INTO users (uname, upass) VALUES ('root', 'toor');
 ```
 
 ---
+
+<br>
 
 ## 🧩 Penjelasan File
 
@@ -136,6 +147,8 @@ http.createServer((req, res) => {
 
 ---
 
+<br>
+
 ## 🚨 Langkah Simulasi Serangan
 
 ### 🔧 Persiapan
@@ -168,6 +181,8 @@ http.createServer((req, res) => {
 
 ---
 
+<br>
+
 ## 🕵️‍♀️ Hasil Serangan
 
 ### **File loot.txt**
@@ -186,6 +201,8 @@ COOKIE: PHPSESSID=abcd1234xyz...
 5. Akses `home.php`. Jika cookie valid, akan langsung masuk sebagai admin.
 
 ---
+
+<br>
 
 ## 🧯 Mitigasi (Pencegahan)
 
