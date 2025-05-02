@@ -5,18 +5,18 @@
 
 ## 📚 Daftar Isi
 
-1. [Tujuan](#🎯-tujuan)
-2. [Kebutuhan Sistem](#🛠️-kebutuhan-sistem)
-3. [Struktur Direktori Proyek](#📁-struktur-direktori-proyek)
-4. [Database Setup](#⚙️-database-setup-via-phpmyadmin)
-5. [Penjelasan File](#🧩-penjelasan-file)
-6. [Langkah Simulasi Serangan](#🚨-langkah-simulasi-serangan)
-7. [Hasil Serangan](#🕵️‍♀️-hasil-serangan)
-8. [Mitigasi (Pencegahan)](#🧯-mitigasi-pencegahan)
+1. [Tujuan](#tujuan)
+2. [Kebutuhan Sistem](#kebutuhan-sistem)
+3. [Struktur Direktori Proyek](#struktur-direktori-proyek)
+4. [Database Setup](#database-setup-via-phpmyadmin)
+5. [Penjelasan File](#penjelasan-file)
+6. [Langkah Simulasi Serangan](#langkah-simulasi-serangan)
+7. [Hasil Serangan](#hasil-serangan)
+8. [Mitigasi (Pencegahan)](#mitigasi-pencegahan)
 
 ---
 
-## 🎯 Tujuan
+## Tujuan
 
 Eksperimen ini dirancang untuk:
 
@@ -28,7 +28,7 @@ Eksperimen ini dirancang untuk:
 
 <br>
 
-## 🛠️ Kebutuhan Sistem
+## Kebutuhan Sistem
 
 | Komponen   | Fungsi                                                    |
 |------------|-----------------------------------------------------------|
@@ -41,7 +41,7 @@ Eksperimen ini dirancang untuk:
 
 <br>
 
-## 📁 Struktur Direktori Proyek
+## Struktur Direktori Proyek
 
 ```
 xss_lab/
@@ -67,7 +67,7 @@ xss_lab/
 
 <br>
 
-## ⚙️ Database Setup (via phpMyAdmin)
+## Database Setup (via phpMyAdmin)
 
 1. Buka `http://localhost/phpmyadmin`.
 2. Buat database baru bernama: `lab_xss`.
@@ -93,7 +93,7 @@ INSERT INTO users (uname, upass) VALUES ('root', 'toor');
 
 <br>
 
-## 🧩 Penjelasan File
+## Penjelasan File
 
 ### **auth/signin.php**
 Melakukan login dan pembuatan session. Jika berhasil, diarahkan ke `home.php`.
@@ -149,9 +149,9 @@ http.createServer((req, res) => {
 
 <br>
 
-## 🚨 Langkah Simulasi Serangan
+## Langkah Simulasi Serangan
 
-### 🔧 Persiapan
+### Persiapan
 1. Jalankan Apache dan MySQL dari XAMPP.
 2. Jalankan Node.js server:
    ```bash
@@ -159,13 +159,13 @@ http.createServer((req, res) => {
    node trap.js
    ```
 
-### 🔑 Login
+### Login
 1. Akses: `http://localhost/xss_lab/auth/signin.php`.
 2. Login:
    - **Username**: root
    - **Password**: toor
 
-### 🧨 Kirim Komentar Jahat
+### Kirim Komentar Jahat
 1. Akses `http://localhost/xss_lab/comments/post.php` dan kirim komentar berikut:
    ```html
    <script>
@@ -173,7 +173,7 @@ http.createServer((req, res) => {
    </script>
    ```
 
-### 🧼 Jalankan Serangan
+### Jalankan Serangan
 1. Admin membuka halaman `comments/display.php`.
 2. Skrip `<script>` dijalankan oleh browser admin.
 3. Cookie terkirim ke `trap.js`.
@@ -183,7 +183,7 @@ http.createServer((req, res) => {
 
 <br>
 
-## 🕵️‍♀️ Hasil Serangan
+## Hasil Serangan
 
 ### **File loot.txt**
 Akan berisi:
@@ -204,7 +204,7 @@ COOKIE: PHPSESSID=abcd1234xyz...
 
 <br>
 
-## 🧯 Mitigasi (Pencegahan)
+## Mitigasi (Pencegahan)
 
 ### **Escaping Output**
 ```php
